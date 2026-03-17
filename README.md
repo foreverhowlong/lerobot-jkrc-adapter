@@ -27,3 +27,34 @@ uv venv --python 3.10
 .venv\Scripts\activate
 # 安装依赖
 uv pip install torch numpy
+
+🚀 快速开始
+
+以下是一个读取机械臂状态并发送微调动作的极简示例：
+Python
+
+import time
+import torch
+from jaka_env import JakaLeRobotBridge
+
+# 1. 连接机械臂 (替换为您的真机或 CoboΠ 虚拟 IP)
+arm = JakaLeRobotBridge(ip="192.168.1.100")
+
+try:
+    # 2. 读取状态给 LeRobot
+    obs = arm.get_observation()
+    print("当前机器状态 Tensor:", obs["observation.state"])
+    
+    # 3. 模拟 AI 模型的动作输出 (这里以微调关节1为例)
+    current_joints = obs["observation.state"].clone()
+    action = current_joints + torch.tensor([0.05, 0, 0, 0, 0, 0])
+    
+    # 4. 执行动作
+    arm.send_action(action)
+    time.sleep(1)
+
+finally:
+    # 5. 安全断开
+    arm.close()
+
+
