@@ -26,3 +26,6 @@ jkrc.pyd
 
 #environment
 .env
+
+#test file
+test.py

@@ -13,7 +13,7 @@
 
 本项目**不包含** JAKA 官方的闭源 SDK 文件。为了正常运行本项目，您必须：
 1. 拥有 JAKA 机械臂或运行 CoboΠ 仿真软件。
-2. 自行获取 JAKA 提供的 `jkrc.pyd`（Python 动态库）及相关的 `.dll` 驱动文件。
+2. 自行获取 JAKA 提供的 `jkrc.pyd`（Python 动态库）及相关的 `.dll` 驱动文件(本项目使用的是SDK V2.2.7，可以在 https://www.jaka.com/zh/download 下载)
 
 ##  安装指南
 
