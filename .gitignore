@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+#jaka sdk
+jakaAPI.dll
+jakaAPI.exp
+jakaAPI.lib
+jkrc.exp
+jkrc.lib
+jkrc.pyd
+
+#cobopie
+/Coboπ
+
+#editor
+.vscode/
+.idea/
+
+#environment
+.env
